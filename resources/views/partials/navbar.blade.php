@@ -1,3 +1,4 @@
+<h2>Salut  {{ auth()->user()->name }}</h2>
 <ul>
     <li><a href="{{ route('welcome') }}">Accueil</a></li>
     <li><a href="/post">Page de contact</a></li>
