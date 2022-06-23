@@ -4,3 +4,6 @@
     <li><a href="{{ route('contact') }}">Accueil</a></li>
     <li><a href="{{ route('create') }}">Creer</a></li>
 </ul>
+<form action="{{ route('logout') }}" methode="post">
+    @csrf
+    <button type="submit">Se deconnecter</button>
