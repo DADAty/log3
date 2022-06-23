@@ -32,6 +32,8 @@ Route::get('/t',[PostController::class,'index']);
     /**MAnisy login */
     Route::get('/',[LoginController::class,'acceuil'])->name('acceuil');
     Route::get('/connexion',[LoginController::class,'connexion'])->name('connexion');
+    Route::get('/logout',[LoginController::class,'logout'])->name('logout')->middleware('auth');
+   
 
 
     /** Eto le views 3 */
