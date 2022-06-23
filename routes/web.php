@@ -31,16 +31,17 @@ Route::get('/t',[PostController::class,'index']);
    
     /**MAnisy login */
     Route::get('/',[LoginController::class,'acceuil'])->name('acceuil');
+    Route::get('/connexion',[LoginController::class,'connexion'])->name('connexion');
 
 
     /** Eto le views 3 */
 
-    Route::get('/b',[PostController::class,'index'])->name('welcome');
-    Route::get('/post',[PostController::class,'show'])->name('posts.show');
-    Route::get('/contact',[PostController::class,'contact'])->name('contact');
-    Route::post('/post/create',[PostController::class,'store'])->name('store');
-    Route::get('/post/create',[PostController::class,'create'])->name('create');
-    Route::get('/post/{id}',[PostController::class,'rechercheavecid'])->name('avecid');
+    Route::get('/b',[PostController::class,'index'])->name('welcome')->middleware('auth');
+    Route::get('/post',[PostController::class,'show'])->name('posts.show')->middleware('auth');
+    Route::get('/contact',[PostController::class,'contact'])->name('contact')->middleware('auth');
+    Route::post('/post/create',[PostController::class,'store'])->name('store')->middleware('auth');
+    Route::get('/post/create',[PostController::class,'create'])->name('create')->middleware('auth');
+    Route::get('/post/{id}',[PostController::class,'rechercheavecid'])->name('avecid')->middleware('auth');
 
 
 

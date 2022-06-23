@@ -4,8 +4,10 @@
 	<title></title>
 </head>
 <body>
- 
-    <form action="" methode="post">
+    @foreach ($errors->all() as $error)
+    {{ $error }}
+    @endforeach
+    <form action="{{ route('connexion')}}" methode="post">
     @csrf
     <input type="mail" name="email"></input>
     <input type="password" name="password"></input>
