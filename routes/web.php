@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\boucle;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\PostController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -27,14 +29,18 @@ Route::get('/t',[PostController::class,'index']);
         return view('article');
     });*/
    
+    /**MAnisy login */
+    Route::get('/',[LoginController::class,'acceuil'])->name('acceuil');
 
 
     /** Eto le views 3 */
 
-    Route::get('/',[PostController::class,'index'])->name('welcome');
+    Route::get('/b',[PostController::class,'index'])->name('welcome');
     Route::get('/post',[PostController::class,'show'])->name('posts.show');
     Route::get('/contact',[PostController::class,'contact'])->name('contact');
     Route::post('/post/create',[PostController::class,'store'])->name('store');
     Route::get('/post/create',[PostController::class,'create'])->name('create');
     Route::get('/post/{id}',[PostController::class,'rechercheavecid'])->name('avecid');
+
+
 
